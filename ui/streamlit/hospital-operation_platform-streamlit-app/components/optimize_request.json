@@ -1,0 +1,98 @@
+{
+  "request_id": "OPS-20260623-001",
+  "analysis_timestamp": "2026-06-23T09:22:46.318Z",
+  "hospital_info": {
+    "hospital_name": "Apollo Multi Specialty Hospital",
+    "hospital_id": "APH-HYD-001",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "total_capacity": 500,
+    "current_patient_count": 425
+  },
+  "admissions": [
+    {
+      "patient_id": "PAT-1001",
+      "patient_name": "Ramesh Kumar",
+      "age": 68,
+      "gender": "Male",
+      "department": "Cardiology",
+      "admission_type": "Emergency",
+      "severity": "Critical",
+      "estimated_length_of_stay": 7,
+      "requires_icu": true
+    },
+    {
+      "patient_id": "PAT-1002",
+      "patient_name": "Priya Sharma",
+      "age": 45,
+      "gender": "Female",
+      "department": "Neurology",
+      "admission_type": "Elective",
+      "severity": "Medium",
+      "estimated_length_of_stay": 4,
+      "requires_icu": false
+    },
+    {
+      "patient_id": "PAT-1003",
+      "patient_name": "Mohammed Ali",
+      "age": 59,
+      "gender": "Male",
+      "department": "Pulmonology",
+      "admission_type": "Emergency",
+      "severity": "High",
+      "estimated_length_of_stay": 5,
+      "requires_icu": true
+    }
+  ],
+  "bed_status": {
+    "total_icu_beds": 50,
+    "occupied_icu_beds": 46,
+    "total_ward_beds": 300,
+    "occupied_ward_beds": 255,
+    "total_private_rooms": 150,
+    "occupied_private_rooms": 124
+  },
+  "staffing_status": [
+    {
+      "department": "Cardiology",
+      "doctors_available": 12,
+      "nurses_available": 25,
+      "technicians_available": 8,
+      "support_staff_available": 10,
+      "current_shift": "Morning"
+    },
+    {
+      "department": "Neurology",
+      "doctors_available": 8,
+      "nurses_available": 18,
+      "technicians_available": 5,
+      "support_staff_available": 7,
+      "current_shift": "Morning"
+    },
+    {
+      "department": "Pulmonology",
+      "doctors_available": 6,
+      "nurses_available": 14,
+      "technicians_available": 4,
+      "support_staff_available": 6,
+      "current_shift": "Morning"
+    }
+  ],
+  "resource_status": {
+    "ventilators_available": 18,
+    "oxygen_units_available": 65,
+    "operation_theaters_available": 6,
+    "ambulances_available": 10,
+    "diagnostic_machines_available": 15,
+    "pharmacy_stock_percentage": 92.5
+  },
+  "revenue_status": {
+    "daily_revenue": 2750000,
+    "monthly_revenue": 82500000,
+    "operational_cost": 1900000,
+    "outstanding_claims": 12500000,
+    "pending_bills": 4500000
+  },
+  "optimization_goal": "Reduce ICU congestion, optimize staffing utilization, improve patient flow, and maximize hospital revenue.",
+  "additional_notes": "Expected increase in emergency admissions due to seasonal respiratory infections. ICU occupancy is nearing capacity."
+}

@@ -1,0 +1,240 @@
+2026-07-13 13:30:37 | INFO | config.llm_config:<module>:18 | Using OpenRouter Model: meta-llama/llama-3.3-70b-instruct
+2026-07-13 13:30:43 | INFO | __main__:<module>:173 | FastAPI Application Initialized
+2026-07-13 13:31:10 | INFO | config.llm_config:<module>:18 | Using OpenRouter Model: meta-llama/llama-3.3-70b-instruct
+2026-07-13 13:31:16 | INFO | main:<module>:173 | FastAPI Application Initialized
+2026-07-13 13:31:16 | INFO | main:lifespan:20 | ================================================================================
+2026-07-13 13:31:16 | INFO | main:lifespan:24 | Starting Autonomous Hospital Operations Platform
+2026-07-13 13:31:16 | INFO | main:lifespan:28 | Initializing AutoGen Agents
+2026-07-13 13:31:16 | INFO | main:lifespan:32 | Application Startup Completed
+2026-07-13 13:31:16 | INFO | main:lifespan:36 | ================================================================================
+2026-07-13 13:38:39 | INFO | routers.operations_router:optimize_operations:47 | API Request Received | Request ID: OPS-1783929755672
+2026-07-13 13:38:39 | INFO | services.operations_service:optimize_operations:38 | Service Layer Started | Request ID: OPS-1783929755672
+2026-07-13 13:38:39 | INFO | services.operations_service:optimize_operations:62 | Hospital: Apollo Multi Specialty Hospital
+2026-07-13 13:38:39 | INFO | services.operations_service:optimize_operations:67 | Current Patients: 425
+2026-07-13 13:38:39 | INFO | services.operations_service:optimize_operations:72 | Admissions Received: 1
+2026-07-13 13:38:41 | INFO | implementation.operations_impl:optimize_operations:34 | Hospital Operations Optimization Started Request ID : OPS-1783929755672
+2026-07-13 13:38:41 | INFO | agents.operations_orchestrator:__init__:38 | OperationsOrchestrator Initialized
+2026-07-13 13:38:41 | INFO | agents.operations_orchestrator:build_team:47 | Creating Hospital Operations Agents
+2026-07-13 13:38:41 | INFO | agents.admissions_agent:get_admissions_agent:14 | Initializing AdmissionsAgent
+2026-07-13 13:38:41 | SUCCESS | agents.admissions_agent:get_admissions_agent:177 | AdmissionsAgent Created Successfully
+2026-07-13 13:38:41 | INFO | agents.bed_management_agent:get_bed_management_agent:13 | Initializing BedManagementAgent
+2026-07-13 13:38:41 | SUCCESS | agents.bed_management_agent:get_bed_management_agent:176 | BedManagementAgent Created Successfully
+2026-07-13 13:38:41 | INFO | agents.staffing_agent:get_staffing_agent:13 | Initializing StaffingAgent
+2026-07-13 13:38:41 | SUCCESS | agents.staffing_agent:get_staffing_agent:162 | StaffingAgent Created Successfully
+2026-07-13 13:38:41 | INFO | agents.resource_agent:get_resource_agent:13 | Initializing ResourceAgent
+2026-07-13 13:38:41 | SUCCESS | agents.resource_agent:get_resource_agent:157 | ResourceAgent Created Successfully
+2026-07-13 13:38:41 | INFO | agents.revenue_agent:get_revenue_agent:13 | Initializing RevenueAgent
+2026-07-13 13:38:41 | SUCCESS | agents.revenue_agent:get_revenue_agent:79 | RevenueAgent Created Successfully
+2026-07-13 13:38:41 | SUCCESS | agents.operations_orchestrator:build_team:71 | All Agents Created Successfully
+2026-07-13 13:38:41 | INFO | agents.operations_orchestrator:build_team:75 | Configuring Termination Conditions
+2026-07-13 13:38:41 | INFO | agents.operations_orchestrator:build_team:87 | Creating RoundRobinGroupChat Team
+2026-07-13 13:38:41 | SUCCESS | agents.operations_orchestrator:build_team:103 | Hospital Operations Team Created
+2026-07-13 13:38:41 | INFO | implementation.operations_impl:optimize_operations:48 | Executing AutoGen Team Workflow
+2026-07-13 13:38:41 | INFO | implementation.operations_impl:optimize_operations:57 | Agent Workflow Completed
+2026-07-13 13:38:41 | SUCCESS | implementation.operations_impl:optimize_operations:75 | Optimization Completed in 0.05 seconds
+2026-07-13 13:38:42 | SUCCESS | services.operations_service:optimize_operations:131 | Service Layer Completed | Request ID: OPS-1783929755672
+2026-07-13 13:38:42 | SUCCESS | routers.operations_router:optimize_operations:63 | API Request Completed | Request ID: OPS-1783929755672 | Execution Time: 2.92s
+2026-07-13 13:51:30 | INFO | routers.operations_router:optimize_operations:47 | API Request Received | Request ID: OPS-20260623-001
+2026-07-13 13:51:30 | INFO | services.operations_service:optimize_operations:38 | Service Layer Started | Request ID: OPS-20260623-001
+2026-07-13 13:51:30 | INFO | services.operations_service:optimize_operations:62 | Hospital: Apollo Multi Specialty Hospital
+2026-07-13 13:51:30 | INFO | services.operations_service:optimize_operations:67 | Current Patients: 425
+2026-07-13 13:51:30 | INFO | services.operations_service:optimize_operations:72 | Admissions Received: 3
+2026-07-13 13:51:32 | INFO | implementation.operations_impl:optimize_operations:34 | Hospital Operations Optimization Started Request ID : OPS-20260623-001
+2026-07-13 13:51:32 | INFO | agents.operations_orchestrator:__init__:38 | OperationsOrchestrator Initialized
+2026-07-13 13:51:32 | INFO | agents.operations_orchestrator:build_team:47 | Creating Hospital Operations Agents
+2026-07-13 13:51:32 | INFO | agents.admissions_agent:get_admissions_agent:14 | Initializing AdmissionsAgent
+2026-07-13 13:51:32 | SUCCESS | agents.admissions_agent:get_admissions_agent:177 | AdmissionsAgent Created Successfully
+2026-07-13 13:51:32 | INFO | agents.bed_management_agent:get_bed_management_agent:13 | Initializing BedManagementAgent
+2026-07-13 13:51:32 | SUCCESS | agents.bed_management_agent:get_bed_management_agent:176 | BedManagementAgent Created Successfully
+2026-07-13 13:51:32 | INFO | agents.staffing_agent:get_staffing_agent:13 | Initializing StaffingAgent
+2026-07-13 13:51:32 | SUCCESS | agents.staffing_agent:get_staffing_agent:162 | StaffingAgent Created Successfully
+2026-07-13 13:51:32 | INFO | agents.resource_agent:get_resource_agent:13 | Initializing ResourceAgent
+2026-07-13 13:51:32 | SUCCESS | agents.resource_agent:get_resource_agent:157 | ResourceAgent Created Successfully
+2026-07-13 13:51:32 | INFO | agents.revenue_agent:get_revenue_agent:13 | Initializing RevenueAgent
+2026-07-13 13:51:32 | SUCCESS | agents.revenue_agent:get_revenue_agent:79 | RevenueAgent Created Successfully
+2026-07-13 13:51:32 | SUCCESS | agents.operations_orchestrator:build_team:71 | All Agents Created Successfully
+2026-07-13 13:51:32 | INFO | agents.operations_orchestrator:build_team:75 | Configuring Termination Conditions
+2026-07-13 13:51:32 | INFO | agents.operations_orchestrator:build_team:87 | Creating RoundRobinGroupChat Team
+2026-07-13 13:51:32 | SUCCESS | agents.operations_orchestrator:build_team:103 | Hospital Operations Team Created
+2026-07-13 13:51:32 | INFO | implementation.operations_impl:optimize_operations:48 | Executing AutoGen Team Workflow
+2026-07-13 13:51:32 | INFO | implementation.operations_impl:optimize_operations:57 | Agent Workflow Completed
+2026-07-13 13:51:32 | SUCCESS | implementation.operations_impl:optimize_operations:75 | Optimization Completed in 0.03 seconds
+2026-07-13 13:51:32 | SUCCESS | services.operations_service:optimize_operations:131 | Service Layer Completed | Request ID: OPS-20260623-001
+2026-07-13 13:51:32 | SUCCESS | routers.operations_router:optimize_operations:63 | API Request Completed | Request ID: OPS-20260623-001 | Execution Time: 2.72s
+2026-07-13 13:56:04 | INFO | routers.operations_router:optimize_operations:47 | API Request Received | Request ID: OPS-20260623-001
+2026-07-13 13:56:04 | INFO | services.operations_service:optimize_operations:38 | Service Layer Started | Request ID: OPS-20260623-001
+2026-07-13 13:56:04 | INFO | services.operations_service:optimize_operations:62 | Hospital: Apollo Multi Specialty Hospital
+2026-07-13 13:56:04 | INFO | services.operations_service:optimize_operations:67 | Current Patients: 425
+2026-07-13 13:56:04 | INFO | services.operations_service:optimize_operations:72 | Admissions Received: 3
+2026-07-13 13:56:06 | INFO | implementation.operations_impl:optimize_operations:34 | Hospital Operations Optimization Started Request ID : OPS-20260623-001
+2026-07-13 13:56:06 | INFO | agents.operations_orchestrator:__init__:38 | OperationsOrchestrator Initialized
+2026-07-13 13:56:06 | INFO | agents.operations_orchestrator:build_team:47 | Creating Hospital Operations Agents
+2026-07-13 13:56:06 | INFO | agents.admissions_agent:get_admissions_agent:14 | Initializing AdmissionsAgent
+2026-07-13 13:56:06 | SUCCESS | agents.admissions_agent:get_admissions_agent:177 | AdmissionsAgent Created Successfully
+2026-07-13 13:56:06 | INFO | agents.bed_management_agent:get_bed_management_agent:13 | Initializing BedManagementAgent
+2026-07-13 13:56:06 | SUCCESS | agents.bed_management_agent:get_bed_management_agent:176 | BedManagementAgent Created Successfully
+2026-07-13 13:56:06 | INFO | agents.staffing_agent:get_staffing_agent:13 | Initializing StaffingAgent
+2026-07-13 13:56:06 | SUCCESS | agents.staffing_agent:get_staffing_agent:162 | StaffingAgent Created Successfully
+2026-07-13 13:56:06 | INFO | agents.resource_agent:get_resource_agent:13 | Initializing ResourceAgent
+2026-07-13 13:56:06 | SUCCESS | agents.resource_agent:get_resource_agent:157 | ResourceAgent Created Successfully
+2026-07-13 13:56:06 | INFO | agents.revenue_agent:get_revenue_agent:13 | Initializing RevenueAgent
+2026-07-13 13:56:06 | SUCCESS | agents.revenue_agent:get_revenue_agent:79 | RevenueAgent Created Successfully
+2026-07-13 13:56:06 | SUCCESS | agents.operations_orchestrator:build_team:71 | All Agents Created Successfully
+2026-07-13 13:56:06 | INFO | agents.operations_orchestrator:build_team:75 | Configuring Termination Conditions
+2026-07-13 13:56:06 | INFO | agents.operations_orchestrator:build_team:87 | Creating RoundRobinGroupChat Team
+2026-07-13 13:56:06 | SUCCESS | agents.operations_orchestrator:build_team:103 | Hospital Operations Team Created
+2026-07-13 13:56:06 | INFO | implementation.operations_impl:optimize_operations:48 | Executing AutoGen Team Workflow
+2026-07-13 13:56:06 | INFO | implementation.operations_impl:optimize_operations:57 | Agent Workflow Completed
+2026-07-13 13:56:06 | SUCCESS | implementation.operations_impl:optimize_operations:75 | Optimization Completed in 0.02 seconds
+2026-07-13 13:56:06 | SUCCESS | services.operations_service:optimize_operations:131 | Service Layer Completed | Request ID: OPS-20260623-001
+2026-07-13 13:56:06 | SUCCESS | routers.operations_router:optimize_operations:63 | API Request Completed | Request ID: OPS-20260623-001 | Execution Time: 2.68s
+2026-07-13 14:01:19 | INFO | routers.operations_router:optimize_operations:47 | API Request Received | Request ID: OPS-20260623-001
+2026-07-13 14:01:19 | INFO | services.operations_service:optimize_operations:38 | Service Layer Started | Request ID: OPS-20260623-001
+2026-07-13 14:01:19 | INFO | services.operations_service:optimize_operations:62 | Hospital: Apollo Multi Specialty Hospital
+2026-07-13 14:01:19 | INFO | services.operations_service:optimize_operations:67 | Current Patients: 425
+2026-07-13 14:01:19 | INFO | services.operations_service:optimize_operations:72 | Admissions Received: 3
+2026-07-13 14:01:21 | INFO | implementation.operations_impl:optimize_operations:34 | Hospital Operations Optimization Started Request ID : OPS-20260623-001
+2026-07-13 14:01:21 | INFO | agents.operations_orchestrator:__init__:38 | OperationsOrchestrator Initialized
+2026-07-13 14:01:21 | INFO | agents.operations_orchestrator:build_team:47 | Creating Hospital Operations Agents
+2026-07-13 14:01:21 | INFO | agents.admissions_agent:get_admissions_agent:14 | Initializing AdmissionsAgent
+2026-07-13 14:01:21 | SUCCESS | agents.admissions_agent:get_admissions_agent:177 | AdmissionsAgent Created Successfully
+2026-07-13 14:01:21 | INFO | agents.bed_management_agent:get_bed_management_agent:13 | Initializing BedManagementAgent
+2026-07-13 14:01:21 | SUCCESS | agents.bed_management_agent:get_bed_management_agent:176 | BedManagementAgent Created Successfully
+2026-07-13 14:01:21 | INFO | agents.staffing_agent:get_staffing_agent:13 | Initializing StaffingAgent
+2026-07-13 14:01:21 | SUCCESS | agents.staffing_agent:get_staffing_agent:162 | StaffingAgent Created Successfully
+2026-07-13 14:01:21 | INFO | agents.resource_agent:get_resource_agent:13 | Initializing ResourceAgent
+2026-07-13 14:01:21 | SUCCESS | agents.resource_agent:get_resource_agent:157 | ResourceAgent Created Successfully
+2026-07-13 14:01:21 | INFO | agents.revenue_agent:get_revenue_agent:13 | Initializing RevenueAgent
+2026-07-13 14:01:21 | SUCCESS | agents.revenue_agent:get_revenue_agent:79 | RevenueAgent Created Successfully
+2026-07-13 14:01:21 | SUCCESS | agents.operations_orchestrator:build_team:71 | All Agents Created Successfully
+2026-07-13 14:01:21 | INFO | agents.operations_orchestrator:build_team:75 | Configuring Termination Conditions
+2026-07-13 14:01:21 | INFO | agents.operations_orchestrator:build_team:87 | Creating RoundRobinGroupChat Team
+2026-07-13 14:01:21 | SUCCESS | agents.operations_orchestrator:build_team:103 | Hospital Operations Team Created
+2026-07-13 14:01:21 | INFO | implementation.operations_impl:optimize_operations:48 | Executing AutoGen Team Workflow
+2026-07-13 14:01:21 | INFO | implementation.operations_impl:optimize_operations:57 | Agent Workflow Completed
+2026-07-13 14:01:21 | SUCCESS | implementation.operations_impl:optimize_operations:75 | Optimization Completed in 0.02 seconds
+2026-07-13 14:01:22 | SUCCESS | services.operations_service:optimize_operations:131 | Service Layer Completed | Request ID: OPS-20260623-001
+2026-07-13 14:01:22 | SUCCESS | routers.operations_router:optimize_operations:63 | API Request Completed | Request ID: OPS-20260623-001 | Execution Time: 2.45s
+2026-07-13 14:31:09 | INFO | routers.operations_router:optimize_operations:47 | API Request Received | Request ID: OPS-20260623-001
+2026-07-13 14:31:09 | INFO | services.operations_service:optimize_operations:38 | Service Layer Started | Request ID: OPS-20260623-001
+2026-07-13 14:31:09 | INFO | services.operations_service:optimize_operations:62 | Hospital: Apollo Multi Specialty Hospital
+2026-07-13 14:31:09 | INFO | services.operations_service:optimize_operations:67 | Current Patients: 425
+2026-07-13 14:31:09 | INFO | services.operations_service:optimize_operations:72 | Admissions Received: 3
+2026-07-13 14:31:11 | INFO | implementation.operations_impl:optimize_operations:34 | Hospital Operations Optimization Started Request ID : OPS-20260623-001
+2026-07-13 14:31:11 | INFO | agents.operations_orchestrator:__init__:38 | OperationsOrchestrator Initialized
+2026-07-13 14:31:11 | INFO | agents.operations_orchestrator:build_team:47 | Creating Hospital Operations Agents
+2026-07-13 14:31:11 | INFO | agents.admissions_agent:get_admissions_agent:14 | Initializing AdmissionsAgent
+2026-07-13 14:31:11 | SUCCESS | agents.admissions_agent:get_admissions_agent:177 | AdmissionsAgent Created Successfully
+2026-07-13 14:31:11 | INFO | agents.bed_management_agent:get_bed_management_agent:13 | Initializing BedManagementAgent
+2026-07-13 14:31:11 | SUCCESS | agents.bed_management_agent:get_bed_management_agent:176 | BedManagementAgent Created Successfully
+2026-07-13 14:31:11 | INFO | agents.staffing_agent:get_staffing_agent:13 | Initializing StaffingAgent
+2026-07-13 14:31:11 | SUCCESS | agents.staffing_agent:get_staffing_agent:162 | StaffingAgent Created Successfully
+2026-07-13 14:31:11 | INFO | agents.resource_agent:get_resource_agent:13 | Initializing ResourceAgent
+2026-07-13 14:31:11 | SUCCESS | agents.resource_agent:get_resource_agent:157 | ResourceAgent Created Successfully
+2026-07-13 14:31:11 | INFO | agents.revenue_agent:get_revenue_agent:13 | Initializing RevenueAgent
+2026-07-13 14:31:11 | SUCCESS | agents.revenue_agent:get_revenue_agent:79 | RevenueAgent Created Successfully
+2026-07-13 14:31:11 | SUCCESS | agents.operations_orchestrator:build_team:71 | All Agents Created Successfully
+2026-07-13 14:31:11 | INFO | agents.operations_orchestrator:build_team:75 | Configuring Termination Conditions
+2026-07-13 14:31:11 | INFO | agents.operations_orchestrator:build_team:87 | Creating RoundRobinGroupChat Team
+2026-07-13 14:31:11 | SUCCESS | agents.operations_orchestrator:build_team:103 | Hospital Operations Team Created
+2026-07-13 14:31:11 | INFO | implementation.operations_impl:optimize_operations:48 | Executing AutoGen Team Workflow
+2026-07-13 14:31:11 | INFO | implementation.operations_impl:optimize_operations:57 | Agent Workflow Completed
+2026-07-13 14:31:11 | SUCCESS | implementation.operations_impl:optimize_operations:75 | Optimization Completed in 0.02 seconds
+2026-07-13 14:31:12 | SUCCESS | services.operations_service:optimize_operations:131 | Service Layer Completed | Request ID: OPS-20260623-001
+2026-07-13 14:31:12 | SUCCESS | routers.operations_router:optimize_operations:63 | API Request Completed | Request ID: OPS-20260623-001 | Execution Time: 2.47s
+2026-07-13 14:31:42 | INFO | routers.operations_router:health_check:107 | Hospital Operations Health Check Requested
+2026-07-13 14:31:42 | INFO | services.operations_service:health_check:160 | Hospital Operations Service Health Check
+2026-07-13 14:31:45 | INFO | routers.operations_router:ping:121 | Ping Request Received
+2026-07-13 14:32:04 | INFO | routers.operations_router:optimize_operations:47 | API Request Received | Request ID: OPS-20260623-001
+2026-07-13 14:32:04 | INFO | services.operations_service:optimize_operations:38 | Service Layer Started | Request ID: OPS-20260623-001
+2026-07-13 14:32:04 | INFO | services.operations_service:optimize_operations:62 | Hospital: Apollo Multi Specialty Hospital
+2026-07-13 14:32:04 | INFO | services.operations_service:optimize_operations:67 | Current Patients: 425
+2026-07-13 14:32:04 | INFO | services.operations_service:optimize_operations:72 | Admissions Received: 3
+2026-07-13 14:32:06 | INFO | implementation.operations_impl:optimize_operations:34 | Hospital Operations Optimization Started Request ID : OPS-20260623-001
+2026-07-13 14:32:06 | INFO | agents.operations_orchestrator:__init__:38 | OperationsOrchestrator Initialized
+2026-07-13 14:32:06 | INFO | agents.operations_orchestrator:build_team:47 | Creating Hospital Operations Agents
+2026-07-13 14:32:06 | INFO | agents.admissions_agent:get_admissions_agent:14 | Initializing AdmissionsAgent
+2026-07-13 14:32:06 | SUCCESS | agents.admissions_agent:get_admissions_agent:177 | AdmissionsAgent Created Successfully
+2026-07-13 14:32:06 | INFO | agents.bed_management_agent:get_bed_management_agent:13 | Initializing BedManagementAgent
+2026-07-13 14:32:06 | SUCCESS | agents.bed_management_agent:get_bed_management_agent:176 | BedManagementAgent Created Successfully
+2026-07-13 14:32:06 | INFO | agents.staffing_agent:get_staffing_agent:13 | Initializing StaffingAgent
+2026-07-13 14:32:06 | SUCCESS | agents.staffing_agent:get_staffing_agent:162 | StaffingAgent Created Successfully
+2026-07-13 14:32:06 | INFO | agents.resource_agent:get_resource_agent:13 | Initializing ResourceAgent
+2026-07-13 14:32:06 | SUCCESS | agents.resource_agent:get_resource_agent:157 | ResourceAgent Created Successfully
+2026-07-13 14:32:06 | INFO | agents.revenue_agent:get_revenue_agent:13 | Initializing RevenueAgent
+2026-07-13 14:32:06 | SUCCESS | agents.revenue_agent:get_revenue_agent:79 | RevenueAgent Created Successfully
+2026-07-13 14:32:06 | SUCCESS | agents.operations_orchestrator:build_team:71 | All Agents Created Successfully
+2026-07-13 14:32:06 | INFO | agents.operations_orchestrator:build_team:75 | Configuring Termination Conditions
+2026-07-13 14:32:06 | INFO | agents.operations_orchestrator:build_team:87 | Creating RoundRobinGroupChat Team
+2026-07-13 14:32:06 | SUCCESS | agents.operations_orchestrator:build_team:103 | Hospital Operations Team Created
+2026-07-13 14:32:06 | INFO | implementation.operations_impl:optimize_operations:48 | Executing AutoGen Team Workflow
+2026-07-13 14:32:06 | INFO | implementation.operations_impl:optimize_operations:57 | Agent Workflow Completed
+2026-07-13 14:32:06 | SUCCESS | implementation.operations_impl:optimize_operations:75 | Optimization Completed in 0.02 seconds
+2026-07-13 14:32:06 | SUCCESS | services.operations_service:optimize_operations:131 | Service Layer Completed | Request ID: OPS-20260623-001
+2026-07-13 14:32:06 | SUCCESS | routers.operations_router:optimize_operations:63 | API Request Completed | Request ID: OPS-20260623-001 | Execution Time: 2.39s
+2026-07-22 10:41:54 | INFO | config.llm_config:<module>:18 | Using OpenRouter Model: meta-llama/llama-3.3-70b-instruct
+2026-07-22 10:42:00 | INFO | main:<module>:173 | FastAPI Application Initialized
+2026-07-22 10:42:00 | INFO | main:lifespan:20 | ================================================================================
+2026-07-22 10:42:00 | INFO | main:lifespan:24 | Starting Autonomous Hospital Operations Platform
+2026-07-22 10:42:00 | INFO | main:lifespan:28 | Initializing AutoGen Agents
+2026-07-22 10:42:00 | INFO | main:lifespan:32 | Application Startup Completed
+2026-07-22 10:42:00 | INFO | main:lifespan:36 | ================================================================================
+2026-07-22 10:44:29 | INFO | routers.operations_router:optimize_operations:47 | API Request Received | Request ID: OPS-20260623-001
+2026-07-22 10:44:29 | INFO | services.operations_service:optimize_operations:38 | Service Layer Started | Request ID: OPS-20260623-001
+2026-07-22 10:44:29 | INFO | services.operations_service:optimize_operations:62 | Hospital: Apollo Multi Specialty Hospital
+2026-07-22 10:44:29 | INFO | services.operations_service:optimize_operations:67 | Current Patients: 425
+2026-07-22 10:44:29 | INFO | services.operations_service:optimize_operations:72 | Admissions Received: 3
+2026-07-22 10:44:31 | INFO | implementation.operations_impl:optimize_operations:34 | Hospital Operations Optimization Started Request ID : OPS-20260623-001
+2026-07-22 10:44:31 | INFO | agents.operations_orchestrator:__init__:38 | OperationsOrchestrator Initialized
+2026-07-22 10:44:31 | INFO | agents.operations_orchestrator:build_team:47 | Creating Hospital Operations Agents
+2026-07-22 10:44:31 | INFO | agents.admissions_agent:get_admissions_agent:14 | Initializing AdmissionsAgent
+2026-07-22 10:44:31 | SUCCESS | agents.admissions_agent:get_admissions_agent:177 | AdmissionsAgent Created Successfully
+2026-07-22 10:44:31 | INFO | agents.bed_management_agent:get_bed_management_agent:13 | Initializing BedManagementAgent
+2026-07-22 10:44:31 | SUCCESS | agents.bed_management_agent:get_bed_management_agent:176 | BedManagementAgent Created Successfully
+2026-07-22 10:44:31 | INFO | agents.staffing_agent:get_staffing_agent:13 | Initializing StaffingAgent
+2026-07-22 10:44:31 | SUCCESS | agents.staffing_agent:get_staffing_agent:162 | StaffingAgent Created Successfully
+2026-07-22 10:44:31 | INFO | agents.resource_agent:get_resource_agent:13 | Initializing ResourceAgent
+2026-07-22 10:44:31 | SUCCESS | agents.resource_agent:get_resource_agent:157 | ResourceAgent Created Successfully
+2026-07-22 10:44:31 | INFO | agents.revenue_agent:get_revenue_agent:13 | Initializing RevenueAgent
+2026-07-22 10:44:31 | SUCCESS | agents.revenue_agent:get_revenue_agent:79 | RevenueAgent Created Successfully
+2026-07-22 10:44:31 | SUCCESS | agents.operations_orchestrator:build_team:71 | All Agents Created Successfully
+2026-07-22 10:44:31 | INFO | agents.operations_orchestrator:build_team:75 | Configuring Termination Conditions
+2026-07-22 10:44:31 | INFO | agents.operations_orchestrator:build_team:87 | Creating RoundRobinGroupChat Team
+2026-07-22 10:44:31 | SUCCESS | agents.operations_orchestrator:build_team:103 | Hospital Operations Team Created
+2026-07-22 10:44:31 | INFO | implementation.operations_impl:optimize_operations:48 | Executing AutoGen Team Workflow
+2026-07-22 10:44:31 | INFO | implementation.operations_impl:optimize_operations:57 | Agent Workflow Completed
+2026-07-22 10:44:31 | SUCCESS | implementation.operations_impl:optimize_operations:75 | Optimization Completed in 0.06 seconds
+2026-07-22 10:44:32 | SUCCESS | services.operations_service:optimize_operations:131 | Service Layer Completed | Request ID: OPS-20260623-001
+2026-07-22 10:44:32 | SUCCESS | routers.operations_router:optimize_operations:63 | API Request Completed | Request ID: OPS-20260623-001 | Execution Time: 2.94s
+2026-07-22 10:46:04 | INFO | routers.operations_router:optimize_operations:47 | API Request Received | Request ID: OPS-20260623-001
+2026-07-22 10:46:04 | INFO | services.operations_service:optimize_operations:38 | Service Layer Started | Request ID: OPS-20260623-001
+2026-07-22 10:46:04 | INFO | services.operations_service:optimize_operations:62 | Hospital: Apollo Multi Specialty Hospital
+2026-07-22 10:46:04 | INFO | services.operations_service:optimize_operations:67 | Current Patients: 425
+2026-07-22 10:46:04 | INFO | services.operations_service:optimize_operations:72 | Admissions Received: 3
+2026-07-22 10:46:06 | INFO | implementation.operations_impl:optimize_operations:34 | Hospital Operations Optimization Started Request ID : OPS-20260623-001
+2026-07-22 10:46:06 | INFO | agents.operations_orchestrator:__init__:38 | OperationsOrchestrator Initialized
+2026-07-22 10:46:06 | INFO | agents.operations_orchestrator:build_team:47 | Creating Hospital Operations Agents
+2026-07-22 10:46:06 | INFO | agents.admissions_agent:get_admissions_agent:14 | Initializing AdmissionsAgent
+2026-07-22 10:46:06 | SUCCESS | agents.admissions_agent:get_admissions_agent:177 | AdmissionsAgent Created Successfully
+2026-07-22 10:46:06 | INFO | agents.bed_management_agent:get_bed_management_agent:13 | Initializing BedManagementAgent
+2026-07-22 10:46:06 | SUCCESS | agents.bed_management_agent:get_bed_management_agent:176 | BedManagementAgent Created Successfully
+2026-07-22 10:46:06 | INFO | agents.staffing_agent:get_staffing_agent:13 | Initializing StaffingAgent
+2026-07-22 10:46:06 | SUCCESS | agents.staffing_agent:get_staffing_agent:162 | StaffingAgent Created Successfully
+2026-07-22 10:46:06 | INFO | agents.resource_agent:get_resource_agent:13 | Initializing ResourceAgent
+2026-07-22 10:46:06 | SUCCESS | agents.resource_agent:get_resource_agent:157 | ResourceAgent Created Successfully
+2026-07-22 10:46:06 | INFO | agents.revenue_agent:get_revenue_agent:13 | Initializing RevenueAgent
+2026-07-22 10:46:06 | SUCCESS | agents.revenue_agent:get_revenue_agent:79 | RevenueAgent Created Successfully
+2026-07-22 10:46:06 | SUCCESS | agents.operations_orchestrator:build_team:71 | All Agents Created Successfully
+2026-07-22 10:46:06 | INFO | agents.operations_orchestrator:build_team:75 | Configuring Termination Conditions
+2026-07-22 10:46:06 | INFO | agents.operations_orchestrator:build_team:87 | Creating RoundRobinGroupChat Team
+2026-07-22 10:46:06 | SUCCESS | agents.operations_orchestrator:build_team:103 | Hospital Operations Team Created
+2026-07-22 10:46:06 | INFO | implementation.operations_impl:optimize_operations:48 | Executing AutoGen Team Workflow
+2026-07-22 10:46:06 | INFO | implementation.operations_impl:optimize_operations:57 | Agent Workflow Completed
+2026-07-22 10:46:06 | SUCCESS | implementation.operations_impl:optimize_operations:75 | Optimization Completed in 0.04 seconds
+2026-07-22 10:46:06 | SUCCESS | services.operations_service:optimize_operations:131 | Service Layer Completed | Request ID: OPS-20260623-001
+2026-07-22 10:46:06 | SUCCESS | routers.operations_router:optimize_operations:63 | API Request Completed | Request ID: OPS-20260623-001 | Execution Time: 2.66s
+2026-07-22 10:46:44 | INFO | main:lifespan:42 | ================================================================================
+2026-07-22 10:46:44 | INFO | main:lifespan:46 | Shutting Down Autonomous Hospital Operations Platform
+2026-07-22 10:46:44 | INFO | main:lifespan:50 | Releasing Resources
+2026-07-22 10:46:44 | INFO | main:lifespan:54 | Application Shutdown Completed
+2026-07-22 10:46:44 | INFO | main:lifespan:58 | ================================================================================
