@@ -1,15 +1,16 @@
 import time
 from datetime import datetime
 
-from utils.logger import logger
+from app.config.settings import settings
+logger = settings.get_logger()
 
 from autogen_agentchat.messages import TextMessage
 from autogen_ext.models.openai import OpenAIChatCompletionClient
-from config.llm_config import get_model_client
 
-from agents.operations_orchestrator import OperationsOrchestrator 
 
-from models.response_model import (
+from app.agents.operations_orchestrator import OperationsOrchestrator 
+
+from app.schemas.response_model import (
     HospitalOperationsResponse,
     ExecutiveSummary,
     AdmissionsOptimization,
@@ -25,7 +26,7 @@ class OperationsImplementation:
 
     def __init__(self):
 
-        self.model_client = get_model_client()
+        self.model_client = settings.get_model_client()
 
     async def optimize_operations(self, request):
 
@@ -52,6 +53,66 @@ class OperationsImplementation:
                     content=task,
                     source="user"
                 )
+            )
+
+            logger.info(
+                f"AutoGen execution completed | "
+                f"stop_reason={result.stop_reason}"
+            )
+
+            agent_messages = [
+                msg for msg in result.messages
+                if msg.source != "user"
+            ]
+
+            agent_sources = [
+                msg.source for msg in agent_messages
+            ]
+
+            logger.info(
+                f"Agent execution summary | "
+                f"agent_count={len(agent_messages)} | "
+                f"sources={agent_sources}"
+            )
+
+            expected_agents = {
+                "AdmissionsAgent",
+                "BedManagementAgent",
+                "StaffingAgent",
+                "ResourceAgent",
+                "RevenueAgent"
+            }
+
+            executed_agents = set(agent_sources)
+
+            missing_agents = expected_agents - executed_agents
+
+            if missing_agents:
+                raise RuntimeError(
+                    f"Hospital operations workflow incomplete. "
+                    f"Missing agents: {sorted(missing_agents)}"
+                )
+
+            logger.success(
+                "All five Hospital Operations Agents executed successfully"
+            )
+
+            logger.info(
+                f"AutoGen result diagnostics | "
+                f"messages={len(result.messages)} | "
+                f"sources={[m.source for m in result.messages]}"
+            )
+
+            if not result.messages:
+                raise RuntimeError(
+                    "AutoGen team returned no messages. "
+                    "Check model client invocation and termination."
+                )
+
+            logger.info(
+                f"Model client class: "
+                f"{type(self.model_client).__module__}."
+                f"{type(self.model_client).__name__}"
             )
 
             logger.info("Agent Workflow Completed")

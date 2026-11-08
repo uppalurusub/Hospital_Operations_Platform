@@ -1,4 +1,6 @@
-from utils.logger import logger
+from app.config.settings import settings
+logger = settings.get_logger()
+model_client = settings.get_model_client()
 
 from autogen_agentchat.teams import RoundRobinGroupChat
 from autogen_agentchat.conditions import (
@@ -6,27 +8,26 @@ from autogen_agentchat.conditions import (
     MaxMessageTermination
 )
 
-from agents.admissions_agent import (
+from app.agents.admissions_agent import (
     get_admissions_agent
 )
 
-from agents.bed_management_agent import (
+from app.agents.bed_management_agent import (
     get_bed_management_agent
 )
 
-from agents.staffing_agent import (
+from app.agents.staffing_agent import (
     get_staffing_agent
 )
 
-from agents.resource_agent import (
+from app.agents.resource_agent import (
     get_resource_agent
 )
 
-from agents.revenue_agent import (
+from app.agents.revenue_agent import (
     get_revenue_agent
 )
-from config.llm_config import get_model_client
-#model_client = get_model_client()
+
 
 
 class OperationsOrchestrator:
@@ -78,10 +79,14 @@ class OperationsOrchestrator:
 
             termination_condition = (
                 TextMentionTermination(
-                    "APPROVED"
+                    "APPROVED",sources=["RevenueAgent"]
                 )
                 |
                 MaxMessageTermination(25)
+            )
+            logger.info(
+                "Termination configured | "
+                "APPROVED must originate from RevenueAgent"
             )
 
             logger.info(

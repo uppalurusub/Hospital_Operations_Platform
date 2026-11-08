@@ -1,472 +1,606 @@
-# 🏥 Hospital Operations Platform
+# 🏥 Autonomous Hospital Operations Platform
 
-An AI-powered **Hospital Operations Platform** that leverages **AutoGen Multi-Agent AI**, **FastAPI**, and **React** to automate hospital operational decision-making.
+An AI-powered **Autonomous Hospital Operations Platform** built using **AutoGen 0.7.5**, **FastAPI**, **Loguru**, and **MLflow** to optimize hospital operations through collaborative AI agents.
 
-The platform analyzes hospital operational data including admissions, bed occupancy, staffing, resources, and financial performance through a collaborative multi-agent architecture to generate intelligent recommendations for hospital administrators.
-
----
-
-# 📑 Table of Contents
-
-- Overview
-- Features
-- System Architecture
-- Project Structure
-- Technology Stack
-- Backend Architecture
-- Frontend Architecture
-- Multi-Agent Workflow
-- Installation
-- Environment Variables
-- Running the Backend
-- Running the Frontend
-- API Documentation
-- Sample Request
-- Sample Response
-- MLflow Integration
-- Logging
-- Future Enhancements
+The platform analyzes admissions, bed availability, staffing, resources, and financial metrics to generate intelligent operational recommendations that improve efficiency, utilization, patient flow, and revenue.
 
 ---
 
-# 📖 Overview
+# Table of Contents
 
-Hospital operations involve multiple interdependent departments such as admissions, bed management, staffing, finance, and resource allocation.
-
-This platform provides an AI-driven operational assistant capable of:
-
-- Predicting operational bottlenecks
-- Optimizing bed utilization
-- Monitoring staffing requirements
-- Improving patient flow
-- Tracking operational KPIs
-- Generating actionable recommendations
-
-The solution utilizes an **AutoGen Multi-Agent architecture**, where specialized AI agents collaborate to produce comprehensive operational insights.
-
----
-
-# ✨ Features
-
-## Backend
-
-- FastAPI REST API
-- AutoGen Multi-Agent Framework
-- Operational Decision Engine
-- Bed Management Analysis
-- Admissions Analysis
-- Staffing Optimization
-- Resource Utilization Analysis
-- Revenue Performance Analysis
-- Central Operations Orchestrator
-- Structured Request/Response Models
-- Logging with Loguru
-- MLflow Integration
-- Environment-based Configuration
-
-## Frontend
-
-- React 19
-- TypeScript
-- Vite
-- Responsive UI
-- Operational Analysis Form
-- Markdown-based AI Response Viewer
-- Loading Indicators
-- API Integration using Axios
-- Modular Component Architecture
+* Overview
+* Features
+* System Architecture
+* Multi-Agent Workflow
+* Project Structure
+* Technology Stack
+* Installation
+* Environment Configuration
+* Running the Application
+* API Endpoints
+* Sample Request
+* Sample Response
+* MLflow Integration
+* Logging
+* Optimization KPIs
+* Future Enhancements
+* License
 
 ---
 
-# 🏗 System Architecture
+# Overview
 
+Modern hospitals continuously struggle with:
+
+* High patient inflow
+* ICU congestion
+* Bed shortages
+* Staff scheduling
+* Resource allocation
+* Revenue optimization
+
+This platform leverages **Agentic AI** to coordinate specialized hospital operation agents that collaboratively analyze operational data and recommend optimization strategies.
+
+The platform consists of specialized AI agents:
+
+* Admissions Agent
+* Bed Management Agent
+* Staffing Agent
+* Resource Optimization Agent
+* Revenue Optimization Agent
+
+These agents collaborate through an AutoGen orchestrator to provide a comprehensive operational assessment.
+
+---
+
+# Features
+
+## Admissions Optimization
+
+* Analyze incoming admissions
+* Identify emergency patients
+* Prioritize critical cases
+* Improve admission workflow
+* Predict operational bottlenecks
+
+---
+
+## Bed Management
+
+* ICU occupancy analysis
+* Ward occupancy optimization
+* Private room utilization
+* Bed allocation recommendations
+* Capacity monitoring
+
+---
+
+## Staffing Optimization
+
+* Doctor utilization
+* Nurse workload analysis
+* Technician allocation
+* Shift optimization
+* Staffing gap identification
+
+---
+
+## Resource Optimization
+
+* Ventilator utilization
+* Oxygen availability
+* Operating theater utilization
+* Diagnostic equipment analysis
+* Pharmacy inventory monitoring
+
+---
+
+## Revenue Optimization
+
+* Daily revenue analysis
+* Monthly revenue projection
+* Operational cost assessment
+* Profit margin calculation
+* Outstanding claims monitoring
+
+---
+
+## Executive Dashboard
+
+The API generates:
+
+* Hospital Health Score
+* Operational Efficiency Score
+* Capacity Utilization
+* Revenue KPIs
+* Risk Alerts
+* Agent Recommendations
+
+---
+
+# System Architecture
+
+```text
+                    Hospital Data
+
+                           │
+                           ▼
+
+                FastAPI REST API Layer
+
+                           │
+
+                    Router Layer
+
+                           │
+
+                  Service Layer
+
+                           │
+
+             Operations Implementation
+
+                           │
+
+              AutoGen Orchestrator Agent
+
+      ┌──────────────┬──────────────┬─────────────┐
+      │              │              │             │
+      ▼              ▼              ▼             ▼
+
+ Admissions     Bed Agent     Staffing      Resource
+    Agent                       Agent         Agent
+
+                      │
+
+                      ▼
+
+                Revenue Agent
+
+                      │
+
+                      ▼
+
+        Consolidated Operational Report
+
+                      │
+
+                      ▼
+
+               JSON API Response
 ```
-                React Frontend
-                       │
-                  Axios REST API
-                       │
-                  FastAPI Backend
-                       │
-          Operations Service Layer
-                       │
-        Operations Implementation
-                       │
-       AutoGen Operations Orchestrator
-        ┌─────────┬─────────┬─────────┬──────────┬─────────┐
-        │         │         │         │          │
- Admissions   Bed Mgmt  Staffing  Resources  Revenue
-    Agent       Agent      Agent      Agent      Agent
-```
 
 ---
 
-# 📂 Project Structure
+# Multi-Agent Workflow
 
-```
-Hospital Operations Platform/
+## Admissions Agent
+
+Responsibilities
+
+* Analyze admissions
+* Classify emergency patients
+* Detect critical cases
+* Prioritize patient intake
+
+---
+
+## Bed Management Agent
+
+Responsibilities
+
+* ICU allocation
+* Ward allocation
+* Bed utilization
+* Capacity optimization
+
+---
+
+## Staffing Agent
+
+Responsibilities
+
+* Staff availability
+* Shift optimization
+* Utilization analysis
+* Staffing recommendations
+
+---
+
+## Resource Agent
+
+Responsibilities
+
+* Equipment monitoring
+* Pharmacy stock analysis
+* Oxygen availability
+* Ventilator utilization
+
+---
+
+## Revenue Agent
+
+Responsibilities
+
+* Revenue forecasting
+* Profitability
+* Cost optimization
+* Claims monitoring
+
+---
+
+# Project Structure
+
+```text
+Hospital Operations Platform
 │
-├── backend/
-│   ├── hospital-operation_platform-python-app/
+├── app
+│   ├── agents
+│   │   ├── admissions_agent.py
+│   │   ├── bed_management_agent.py
+│   │   ├── staffing_agent.py
+│   │   ├── resource_agent.py
+│   │   ├── revenue_agent.py
+│   │   └── operations_orchestrator.py
 │   │
-│   ├── agents/
-│   │     admissions_agent.py
-│   │     bed_management_agent.py
-│   │     staffing_agent.py
-│   │     resource_agent.py
-│   │     revenue_agent.py
-│   │     operations_orchestrator.py
+│   ├── config
+│   │   ├── llm_config.py
+│   │   └── llm_models_config.py
 │   │
-│   ├── routers/
-│   ├── services/
-│   ├── implementation/
-│   ├── models/
-│   ├── config/
-│   ├── utils/
-│   ├── logs/
+│   ├── implementation
+│   │   └── operations_impl.py
+│   │
+│   ├── models
+│   │   ├── request_model.py
+│   │   └── response_model.py
+│   │
+│   ├── routers
+│   │   └── operations_router.py
+│   │
+│   ├── services
+│   │   └── operations_service.py
+│   │
+│   ├── utils
+│   │   ├── logger.py
+│   │   ├── json_utils.py
+│   │   └── prompt_templates.py
+│   │
 │   └── main.py
 │
-├── ui/
-│   └── reactjs/
-│       └── hospital-operation_platform-react-app/
-│           ├── src/
-│           │    ├── api/
-│           │    ├── components/
-│           │    ├── models/
-│           │    ├── pages/
-│           │    ├── services/
-│           │    └── styles/
-│           └── package.json
-│
-└── requirements.txt
+├── logs
+├── requirements.txt
+├── optimize_request.json
+└── mlflow.db
 ```
 
 ---
 
-# 💻 Technology Stack
+# Technology Stack
 
-## Backend
-
-- Python
-- FastAPI
-- AutoGen 0.7.5
-- OpenAI
-- MLflow
-- Loguru
-- Uvicorn
-- python-dotenv
-
-## Frontend
-
-- React 19
-- TypeScript
-- Vite
-- Axios
-- React Router DOM
-- React Markdown
+| Component           | Technology               |
+| ------------------- | ------------------------ |
+| Language            | Python 3.11+             |
+| API                 | FastAPI                  |
+| Agent Framework     | AutoGen 0.7.5            |
+| LLM                 | OpenAI Compatible Models |
+| Logging             | Loguru                   |
+| Experiment Tracking | MLflow                   |
+| Validation          | Pydantic                 |
+| ASGI Server         | Uvicorn                  |
 
 ---
 
-# 🤖 Backend Architecture
-
-The backend follows a layered architecture.
-
-```
-Router
-   ↓
-Service
-   ↓
-Implementation
-   ↓
-Operations Orchestrator
-   ↓
-Specialized AI Agents
-```
-
-### AI Agents
-
-### Admissions Agent
-
-Responsible for:
-
-- Admission trends
-- Patient inflow
-- Capacity planning
-
----
-
-### Bed Management Agent
-
-Responsible for:
-
-- Bed occupancy
-- Bed availability
-- Patient allocation
-
----
-
-### Staffing Agent
-
-Responsible for:
-
-- Workforce utilization
-- Staffing shortages
-- Shift optimization
-
----
-
-### Resource Agent
-
-Responsible for:
-
-- Equipment utilization
-- Operational resources
-- Hospital infrastructure
-
----
-
-### Revenue Agent
-
-Responsible for:
-
-- Revenue analysis
-- Financial KPIs
-- Cost optimization
-
----
-
-### Operations Orchestrator
-
-Coordinates all agents and produces a unified operational recommendation.
-
----
-
-# 🎨 Frontend Architecture
-
-```
-App
- │
- └── OperationsPage
-       │
-       ├── OperationsForm
-       ├── OperationsLoader
-       └── OperationsResult
-```
-
-The frontend communicates with the FastAPI backend using Axios and renders AI-generated operational insights in a user-friendly interface.
-
----
-
-# 🔄 Multi-Agent Workflow
-
-```
-Hospital Operational Data
-            │
-            ▼
- Operations Orchestrator
-            │
- ┌──────────┼───────────┐
- ▼          ▼           ▼
-Admissions  Bed      Staffing
-            │
-            ▼
-Resources & Revenue
-            │
-            ▼
-Combined Operational Analysis
-            │
-            ▼
-Recommendations
-```
-
----
-
-# ⚙ Installation
+# Installation
 
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-repository/hospital-operations-platform.git
+git clone <repository_url>
+
+cd Hospital_Operations_Platform
 ```
 
 ---
 
-# 📦 Install Backend
+## Create Virtual Environment
 
 ```bash
-cd backend/hospital-operation_platform-python-app
-
-pip install -r ../../requirements.txt
+python -m venv .venv
 ```
 
----
-
-# 📦 Install Frontend
+Windows
 
 ```bash
-cd ui/reactjs/hospital-operation_platform-react-app
+.venv\Scripts\activate
+```
 
-npm install
+Linux/Mac
+
+```bash
+source .venv/bin/activate
 ```
 
 ---
 
-# 🔑 Environment Variables
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Environment Configuration
 
 Create a `.env` file.
 
 ```env
 OPENAI_API_KEY=your_api_key
 
-OPENAI_MODEL=gpt-4.1
+OPENAI_BASE_URL=https://your-openai-compatible-endpoint
 
-LOG_LEVEL=INFO
+MODEL_NAME=gpt-4o-mini
+
+TEMPERATURE=0.2
+
+MAX_TOKENS=4096
 ```
+
+Adjust the values according to the LLM provider configured in `app/config/llm_config.py`.
 
 ---
 
-# ▶ Running Backend
+# Running the Application
 
 ```bash
-cd backend/hospital-operation_platform-python-app
-
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
-Backend URL
+Application
 
-```
+```text
 http://localhost:8000
 ```
 
-Swagger
+Swagger UI
 
-```
+```text
 http://localhost:8000/docs
 ```
 
----
+ReDoc
 
-# ▶ Running Frontend
-
-```bash
-cd ui/reactjs/hospital-operation_platform-react-app
-
-npm run dev
-```
-
-Frontend
-
-```
-http://localhost:5173
+```text
+http://localhost:8000/redoc
 ```
 
 ---
 
-# 🌐 API Documentation
+# API Endpoints
 
-Example endpoint
+## Root
 
-```
-POST /api/v1/operations/analyze
+```http
+GET /
 ```
 
 ---
 
-# 📥 Sample Request
+## Health
+
+```http
+GET /health
+```
+
+---
+
+## Operations Health
+
+```http
+GET /api/v1/operations/health
+```
+
+---
+
+## Ping
+
+```http
+GET /api/v1/operations/ping
+```
+
+---
+
+## Optimize Hospital Operations
+
+```http
+POST /api/v1/operations/optimize
+```
+
+---
+
+# Sample Request
 
 ```json
 {
-  "hospital_name": "City Hospital",
-  "total_beds": 450,
-  "occupied_beds": 390,
-  "daily_admissions": 65,
-  "available_staff": 180,
-  "resource_utilization": 87,
-  "monthly_revenue": 3500000
+  "request_id": "REQ1001",
+  "hospital_info": {
+    "hospital_name": "CityCare Hospital",
+    "hospital_id": "HSP001",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "total_capacity": 500,
+    "current_patient_count": 420
+  },
+  "admissions": [
+    {
+      "patient_id": "PAT1001",
+      "patient_name": "John Doe",
+      "age": 68,
+      "gender": "Male",
+      "department": "Cardiology",
+      "admission_type": "Emergency",
+      "severity": "Critical",
+      "estimated_length_of_stay": 7,
+      "requires_icu": true
+    }
+  ],
+  "bed_status": {
+    "total_icu_beds": 50,
+    "occupied_icu_beds": 45,
+    "total_ward_beds": 350,
+    "occupied_ward_beds": 300,
+    "total_private_rooms": 100,
+    "occupied_private_rooms": 82
+  },
+  "staffing_status": [
+    {
+      "department": "Emergency",
+      "doctors_available": 12,
+      "nurses_available": 25,
+      "technicians_available": 8,
+      "support_staff_available": 15,
+      "current_shift": "Morning"
+    }
+  ],
+  "resource_status": {
+    "ventilators_available": 12,
+    "oxygen_units_available": 50,
+    "operation_theaters_available": 4,
+    "ambulances_available": 6,
+    "diagnostic_machines_available": 10,
+    "pharmacy_stock_percentage": 92.5
+  },
+  "revenue_status": {
+    "daily_revenue": 250000,
+    "monthly_revenue": 7200000,
+    "operational_cost": 4800000,
+    "outstanding_claims": 650000,
+    "pending_bills": 320000
+  },
+  "optimization_goal": "Optimize Hospital Operations"
 }
 ```
 
 ---
 
-# 📤 Sample Response
+# Sample Response
 
 ```json
 {
-  "summary": "Hospital operating near maximum capacity.",
-  "bed_management": "Increase discharge planning efficiency.",
-  "staffing": "Deploy additional nurses to emergency department.",
-  "resources": "Optimize ICU equipment allocation.",
-  "revenue": "Reduce overtime costs to improve margins.",
-  "overall_recommendation": "Expand surge capacity and rebalance staffing."
+  "request_id": "REQ1001",
+  "status": "SUCCESS",
+  "analysis_timestamp": "2026-06-25T10:15:30Z",
+  "executive_summary": {
+    "overall_status": "OPTIMIZED",
+    "hospital_health_score": 90.0,
+    "operational_efficiency_score": 88.0,
+    "key_findings": [
+      "Hospital operations analyzed",
+      "Optimization recommendations generated"
+    ]
+  },
+  "admissions_optimization": {},
+  "bed_optimization": {},
+  "staffing_optimization": {},
+  "resource_optimization": {},
+  "revenue_optimization": {},
+  "risk_alerts": [],
+  "operational_kpis": {}
 }
 ```
 
 ---
 
-# 📈 MLflow Integration
+# MLflow Integration
 
-The platform supports MLflow for:
+The platform records execution details into MLflow, including:
 
-- Experiment Tracking
-- Model Versioning
-- Performance Monitoring
-- Operational Metrics
-- AI Workflow Tracking
+* Request parameters
+* Response payload
+* Execution time
+* Start and end timestamps
+* Endpoint metadata
+* Experiment tracking
 
-Launch MLflow
+Default experiment:
+
+```text
+Hospital_Operations_Platform_Interface
+```
+
+Start MLflow:
 
 ```bash
-mlflow ui
+mlflow server \
+--backend-store-uri sqlite:///mlflow.db \
+--default-artifact-root ./mlruns \
+--host 0.0.0.0 \
+--port 5000
 ```
 
-Default URL
+MLflow UI
 
-```
+```text
 http://localhost:5000
 ```
 
 ---
 
-# 📝 Logging
+# Logging
 
-Application logs are stored under:
+Loguru provides structured logging throughout the application.
 
-```
-logs/
-```
+Typical log events include:
 
-Example log files:
+* API requests
+* Validation
+* Agent execution
+* Orchestrator workflow
+* MLflow tracking
+* Exceptions
+* Performance metrics
 
-```
-healthcare.log
-error.log
-```
-
----
-
-# 🚀 Future Enhancements
-
-- Predictive Bed Occupancy Forecasting
-- Hospital Digital Twin
-- Real-Time Dashboard
-- HL7/FHIR Integration
-- Electronic Health Record (EHR) Connectivity
-- Staff Scheduling Optimization
-- Resource Demand Forecasting
-- Multi-Hospital Network Support
-- Role-Based Access Control (RBAC)
-- Cloud Deployment (Azure/AWS/GCP)
+Log files are stored in the `logs/` directory.
 
 ---
 
-# 📜 License
+# Optimization KPIs
 
-This project is intended for educational, research, and enterprise healthcare AI use cases.
+The platform computes operational metrics such as:
+
+* Hospital Capacity Utilization
+* ICU Occupancy Rate
+* Ward Occupancy Rate
+* Private Room Occupancy
+* Patient-to-Bed Ratio
+* Average Length of Stay
+* Patient Flow Efficiency
+* Revenue per Patient
+* Operational Efficiency Score
+* Hospital Health Score
+* Profit Margin
+* Resource Utilization
+* Pharmacy Stock Percentage
 
 ---
 
-# 👨‍💻 Author
+# Future Enhancements
 
-Hospital Operations Platform
+* Real-time bed tracking
+* Predictive admission forecasting
+* Emergency surge management
+* Staff scheduling optimization using AI
+* Digital Twin integration
+* IoT-enabled resource monitoring
+* HL7/FHIR interoperability
+* Electronic Health Record (EHR) integration
+* Power BI dashboards
+* Role-based access control
+* Notification and alert engine
+* Multi-hospital operational analytics
 
-AI-powered Autonomous Hospital Operations using AutoGen, FastAPI, and React.
+---
+
+# License
+
+This project is intended for educational, research, and enterprise healthcare operational optimization purposes. Ensure compliance with applicable healthcare regulations and organizational data governance policies before deploying in production.

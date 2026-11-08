@@ -1,17 +1,18 @@
 from time import perf_counter
 
 from fastapi import APIRouter, HTTPException, status
-from utils.logger import logger
+from app.config.settings import settings
+logger = settings.get_logger()
 
-from models.request_model import (
+from app.schemas.request_model import (
     HospitalOperationsRequest
 )
 
-from models.response_model import (
+from app.schemas.response_model import (
     HospitalOperationsResponse
 )
 
-from services.operations_service import (
+from app.services.operations_service import (
     OperationsService
 )
 
